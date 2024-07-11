@@ -7,19 +7,22 @@ android {
     namespace = "com.example.tm"
     compileSdk = 34
 
+    buildFeatures {
+        buildConfig = true
+    }
     defaultConfig {
         applicationId = "com.example.tm"
         minSdk = 28
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
-
+        //buildConfigField("String", "API_URL", "\"http://0000000:2003/api/\"")
+        buildConfigField("String", "API_URL", "\"http://0000002003/api/\"")
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
         }
     }
-
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -57,8 +60,8 @@ dependencies {
 
     implementation(libs.okhttp3.logging.interceptor)
     implementation(libs.okhttp3)
-
-    implementation("androidx.activity:activity-compose:1.8.0")
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0")
+    implementation("androidx.activity:activity-compose:1.9.0")
     implementation("androidx.compose.material3:material3")
     implementation("androidx.compose.runtime:runtime")
     implementation("androidx.compose.runtime:runtime-livedata")
@@ -70,8 +73,6 @@ dependencies {
 
     implementation ("com.maxkeppeler.sheets-compose-dialogs:core:1.3.0")
 
-    // INFO
-  //  implementation ("com.maxkeppeler.sheets-compose-dialogs:info:1.3.0")
 
     // COLOR
     implementation ("com.maxkeppeler.sheets-compose-dialogs:color:1.3.0")
@@ -81,9 +82,11 @@ dependencies {
 
     // CLOCK
     implementation ("com.maxkeppeler.sheets-compose-dialogs:clock:1.3.0")
-
+    implementation("io.github.darkokoa:datetime-wheel-picker:1.0.0-beta01")
+    implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.6.0")
     // DATE TIME
-        //implementation ("com.maxkeppeler.sheets-compose-dialogs:date_time:1.3.0")
+
+
 
     // DURATION
   //  implementation ("com.maxkeppeler.sheets-compose-dialogs:duration:1.3.0")
@@ -111,6 +114,7 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

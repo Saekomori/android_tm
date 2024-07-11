@@ -2,35 +2,50 @@ package com.example.tm.graphs
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.example.tm.screens.GroupsScreen
+import com.example.tm.screens.group.GroupsScreen
 import com.example.tm.screens.SettingScreen
-import com.example.tm.screens.TaskCreationScreen
-import com.example.tm.screens.TaskScreen
+import com.example.tm.screens.task.TaskScreen
+import com.example.tm.ui.theme.AppTheme
 
 @Composable
 fun NavGraph(
     navHostController: NavHostController,
+    navController: NavController,
     modifier: Modifier,
     createTask: ()  -> Unit
 ) {
     NavHost(navController = navHostController, startDestination = "task_screen", modifier = modifier ) {
         composable("task_screen") {
+            AppTheme {
+
+
             TaskScreen (
-                createTask = createTask,
-                modifier = Modifier
+                modifier = Modifier,
+                navController = navController
             )
+            }
         }
         composable("groups_screen") {
-            GroupsScreen()
+            AppTheme {
+
+
+            GroupsScreen(
+                navController = navController
+            )
+            }
         }
         composable("setting_screen") {
-            SettingScreen()
-        }
-        composable("taskCreation_screen") {
-            TaskCreationScreen()
+            AppTheme {
+
+
+            SettingScreen(
+                navController = navController
+            )
+            }
         }
     }
 }

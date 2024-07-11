@@ -32,3 +32,4 @@ val Typography = Typography(
     )
     */
 )
+val AppTypography = Typography()

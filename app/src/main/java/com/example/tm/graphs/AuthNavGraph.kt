@@ -6,9 +6,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.example.tm.R
-import com.example.tm.screens.AuthScreen
-import com.example.tm.screens.MainScreen
-import com.example.tm.screens.RegScreen
+import com.example.tm.screens.auth.AuthScreen
+import com.example.tm.screens.auth.RegScreen
 
 
 fun NavGraphBuilder.authNavGraph(navController: NavHostController) {
@@ -18,14 +17,14 @@ fun NavGraphBuilder.authNavGraph(navController: NavHostController) {
     ) {
         composable(route = TaskManagerScreen.Start.name) {
             AuthScreen(
-                regGoClick = { navController.navigate(TaskManagerScreen.Reg.name) },
+                regGoClick = {navController.navigate(TaskManagerScreen.Reg.name)},
                 loginClick = {navController.navigate(Graph.MAIN)},
             )
         }
 
         composable(route = TaskManagerScreen.Reg.name) {
             RegScreen(
-                authGo = { navController.navigate(TaskManagerScreen.Start.name) },
+                authGo = {navController.navigate(TaskManagerScreen.Start.name)},
                 tasksGo = {navController.navigate(Graph.MAIN)},
             )
         }

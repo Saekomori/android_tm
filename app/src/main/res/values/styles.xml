@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CustomDatePickerDialog">
+        <item name="android:textColorPrimary">#FF0000</item>
+        <item name="android:textColorSecondary">#00FF00</item>
+        <!-- Добавьте другие параметры стиля, которые вам нужны -->
+    </style>
+
+    <style name="CustomTimePickerDialog">
+        <item name="android:textColorPrimary">#FF0000</item>
+        <item name="android:textColorSecondary">#00FF00</item>
+        <!-- Добавьте другие параметры стиля, которые вам нужны -->
+    </style>
+</resources>

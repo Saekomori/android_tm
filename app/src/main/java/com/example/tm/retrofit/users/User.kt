@@ -1,4 +1,4 @@
-package com.example.tm.retrofit
+package com.example.tm.retrofit.users
 
 data class User(
     val email: String,
